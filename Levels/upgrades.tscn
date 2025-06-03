@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvpgwg2hi4bww"]
+
+[ext_resource type="Script" path="res://Levels/upgrades.gd" id="1_21d8k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ij77a"]
+font_size = 44
+font_color = Color(0, 1, 0, 1)
+outline_size = 13
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Upgrades" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_21d8k")
+
+[node name="UpgradesLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 901.0
+offset_top = 53.0
+offset_right = 1113.0
+offset_bottom = 150.0
+text = "Upgrades"
+label_settings = SubResource("LabelSettings_ij77a")
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 932.0
+offset_top = 923.0
+offset_right = 1095.0
+offset_bottom = 1006.0
+text = "Continue"
+
+[node name="Points" type="Label" parent="."]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 127.0
+offset_right = 1357.0
+offset_bottom = 224.0
+text = "Upgrade points remaining: 0"
+label_settings = SubResource("LabelSettings_ij77a")
+horizontal_alignment = 1
+
+[node name="SpeedLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 541.0
+offset_top = 427.0
+offset_right = 589.0
+offset_bottom = 453.0
+text = "Speed"
+
+[node name="SizeLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 541.0
+offset_top = 628.0
+offset_right = 589.0
+offset_bottom = 654.0
+text = "Size"
+
+[node name="SpeedUpgrades" type="Label" parent="."]
+layout_mode = 0
+offset_left = 966.0
+offset_top = 427.0
+offset_right = 1037.0
+offset_bottom = 453.0
+text = "0 applied"
+
+[node name="SizeUpgrades" type="Label" parent="."]
+layout_mode = 0
+offset_left = 966.0
+offset_top = 628.0
+offset_right = 1037.0
+offset_bottom = 654.0
+text = "0 applied
+"
+
+[node name="UpgradeSpeed" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1357.0
+offset_top = 427.0
+offset_right = 1472.0
+offset_bottom = 458.0
+text = "Upgrade for 0"
+
+[node name="UpgradeSize" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1357.0
+offset_top = 628.0
+offset_right = 1472.0
+offset_bottom = 659.0
+text = "Upgrade for 0"
+
+[connection signal="button_up" from="ContinueButton" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="UpgradeSpeed" to="." method="_on_upgrade_speed_button_up"]
+[connection signal="button_up" from="UpgradeSize" to="." method="_on_upgrade_size_button_up"]

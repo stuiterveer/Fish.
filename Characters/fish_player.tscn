@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5t0du3y6n06b"]
+
+[ext_resource type="Script" path="res://Characters/fish_player.gd" id="1_og1n6"]
+[ext_resource type="Texture2D" uid="uid://bxn3vaugj10fs" path="res://Art/fish_player.png" id="1_y2qk2"]
+[ext_resource type="Material" uid="uid://q42l7fd0hjfl" path="res://Shaders/player_material.tres" id="2_bw18t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h845o"]
+radius = 201.0
+height = 798.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2xni"]
+size = Vector2(797, 578)
+
+[node name="FishPlayer" type="CharacterBody2D"]
+script = ExtResource("1_og1n6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("2_bw18t")
+position = Vector2(2.84217e-14, 5.96046e-08)
+texture = ExtResource("1_y2qk2")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_h845o")
+
+[node name="WallDetection" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, -4)
+shape = SubResource("RectangleShape2D_j2xni")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

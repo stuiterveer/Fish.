@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2lae0obrsqnm"]
+
+[ext_resource type="Script" path="res://Levels/gameplay.gd" id="1_v8ls1"]
+[ext_resource type="PackedScene" uid="uid://c5t0du3y6n06b" path="res://Characters/fish_player.tscn" id="1_xajua"]
+[ext_resource type="PackedScene" uid="uid://f8j084x8ffyv" path="res://Blocks/wall_side.tscn" id="3_femgw"]
+[ext_resource type="PackedScene" uid="uid://bffhjjisbdqwo" path="res://Blocks/wall_top_bottom.tscn" id="4_dc0k3"]
+[ext_resource type="PackedScene" uid="uid://bg1lmc3hyxkl2" path="res://Levels/pause_screen.tscn" id="5_ki3ed"]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource("1_v8ls1")
+
+[node name="PauseScreen" parent="." instance=ExtResource("5_ki3ed")]
+
+[node name="FishPlayer" parent="." instance=ExtResource("1_xajua")]
+position = Vector2(960, 540)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="SpawnTimer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+
+[node name="Score" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 49.0
+offset_bottom = 29.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="WallLeft" parent="." instance=ExtResource("3_femgw")]
+
+[node name="WallRight" parent="." instance=ExtResource("3_femgw")]
+position = Vector2(1940, 0)
+
+[node name="WallTop" parent="." instance=ExtResource("4_dc0k3")]
+
+[node name="WallBottom" parent="." instance=ExtResource("4_dc0k3")]
+position = Vector2(0, 1108)
+
+[node name="TimeRemaining" type="Label" parent="."]
+offset_left = 1880.0
+offset_right = 1920.0
+offset_bottom = 23.0
+text = "0"
+horizontal_alignment = 2
+
+[node name="CurrentDay" type="Label" parent="."]
+offset_left = 1880.0
+offset_top = 27.0
+offset_right = 1920.0
+offset_bottom = 53.0
+text = "0"
+horizontal_alignment = 2
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
