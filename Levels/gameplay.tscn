@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b2lae0obrsqnm"]
 
-[ext_resource type="Script" path="res://Levels/gameplay.gd" id="1_v8ls1"]
+[ext_resource type="Script" uid="uid://dbav0i5sk4w48" path="res://Levels/gameplay.gd" id="1_v8ls1"]
 [ext_resource type="PackedScene" uid="uid://c5t0du3y6n06b" path="res://Characters/fish_player.tscn" id="1_xajua"]
 [ext_resource type="PackedScene" uid="uid://f8j084x8ffyv" path="res://Blocks/wall_side.tscn" id="3_femgw"]
 [ext_resource type="PackedScene" uid="uid://bffhjjisbdqwo" path="res://Blocks/wall_top_bottom.tscn" id="4_dc0k3"]

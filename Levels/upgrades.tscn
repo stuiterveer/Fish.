@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvpgwg2hi4bww"]
 
-[ext_resource type="Script" path="res://Levels/upgrades.gd" id="1_21d8k"]
+[ext_resource type="Script" uid="uid://bsd0aegn7ygks" path="res://Levels/upgrades.gd" id="1_21d8k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ij77a"]
 font_size = 44

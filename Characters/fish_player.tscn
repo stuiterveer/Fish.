@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c5t0du3y6n06b"]
 
-[ext_resource type="Script" path="res://Characters/fish_player.gd" id="1_og1n6"]
+[ext_resource type="Script" uid="uid://bm35f2wk426ps" path="res://Characters/fish_player.gd" id="1_og1n6"]
 [ext_resource type="Texture2D" uid="uid://bxn3vaugj10fs" path="res://Art/fish_player.png" id="1_y2qk2"]
 [ext_resource type="Material" uid="uid://q42l7fd0hjfl" path="res://Shaders/player_material.tres" id="2_bw18t"]
 
